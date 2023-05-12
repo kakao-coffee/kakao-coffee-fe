@@ -1,4 +1,3 @@
-import React from "react";
 import HeadInfo from "./component/HeadInfo";
 import { getBeverages, getPopularBeverages } from "@/utils/api";
 import { beverageType, homeProps } from "@/types/data";
@@ -10,6 +9,7 @@ const Home = ({ beverages, popularBeverages }: homeProps) => {
     <>
       <HeadInfo />
       <HomeWrapper>
+        <CarouselWrapper></CarouselWrapper>
         <CardList>
           {beverages.map((beverage: beverageType) => (
             <Card key={beverage.beverageId} beverage={beverage} />
@@ -30,6 +30,10 @@ const HomeWrapper = styled.section`
   max-width: 120rem;
   height: 100%;
   margin: 0 auto;
+`;
+
+const CarouselWrapper = styled.section`
+  width: 100%;
 `;
 
 const CardList = styled.section`

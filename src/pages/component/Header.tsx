@@ -2,7 +2,7 @@ import Button from "@/element/Button";
 import { isDarkModeState, modalState } from "@/utils/atoms";
 import styled from "@emotion/styled";
 import Link from "next/link";
-import { BsSun } from "react-icons/bs";
+import { BsMoon, BsSun } from "react-icons/bs";
 import { useRecoilState, useSetRecoilState } from "recoil";
 import { modalTypeState } from "../../utils/atoms";
 
@@ -29,7 +29,7 @@ const Header = () => {
           <Link href="/coffee">네비2</Link>
         </li>
         <li onClick={toggleMode}>
-          <BsSun size={22} />
+          {darkmode === false ? <BsSun size={22} /> : <BsMoon size={22} />}
         </li>
         <Button onClick={onloginModal}>로그인</Button>
       </HeaderLists>

@@ -8,7 +8,7 @@ export const isDarkModeState = atom<boolean>({
 
 export const modalState = atom<boolean>({
   key: `state${v4()}`,
-  default: true,
+  default: false,
 });
 
 export const modalTypeState = atom<string>({

@@ -3,20 +3,32 @@ import styled from "@emotion/styled";
 import { useRef } from "react";
 import { useSetRecoilState } from "recoil";
 import { motion } from "framer-motion";
+import { modalBlurVariants, modalContentVariants } from "@/styles/variants";
 
 const Modal = () => {
   const setIsModal = useSetRecoilState(modalState);
   const modalRef = useRef(null);
   return (
     <ModalWrapper
+      variants={modalBlurVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
       ref={modalRef}
       onClick={(e) => {
-        if (e.currentTarget === modalRef.current) {
+        if (e.target === modalRef.current) {
           setIsModal(false);
         }
       }}
     >
-      <ModalContentWrapper>안녕</ModalContentWrapper>
+      <ModalContentWrapper
+        variants={modalContentVariants}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+      >
+        안녕
+      </ModalContentWrapper>
     </ModalWrapper>
   );
 };

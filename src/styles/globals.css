@@ -7,10 +7,8 @@
   transition: 0.15s background;
 }
 
-@media (max-width: 600px) {
-  * {
-    font-size: 8px;
-  }
+body {
+  background: #fbf8f1;
 }
 
 @media (max-width: 600px) {
