@@ -18,6 +18,11 @@ const RootWrapper = styled.div`
   width: 100vw;
   min-height: 100vh;
   padding: 0 1.2rem;
+  background-color: ${(props) => props.theme.backgroundColor};
+  color: ${(props) => props.theme.textColor};
+  li > a {
+    color: ${(props) => props.theme.textColor};
+  }
 `;
 
 export default Layout;

@@ -6,6 +6,12 @@
   font-size: 10px;
 }
 
+@media (max-width: 600px) {
+  * {
+    font-size: 7.5px;
+  }
+}
+
 ul {
   list-style: none;
 }
