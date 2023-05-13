@@ -5,13 +5,3 @@ export const isDarkModeState = atom<boolean>({
   key: "isDarkMode",
   default: false,
 });
-
-export const modalState = atom<boolean>({
-  key: `state${v4()}`,
-  default: false,
-});
-
-export const modalTypeState = atom<string>({
-  key: `state${v4()}`,
-  default: "",
-});
