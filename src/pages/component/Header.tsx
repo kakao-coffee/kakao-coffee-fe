@@ -2,6 +2,7 @@ import Button from "@/element/Button";
 import { isDarkModeState } from "@/utils/atoms";
 import styled from "@emotion/styled";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { BsMoon, BsSun } from "react-icons/bs";
 import { useRecoilState, useSetRecoilState } from "recoil";
 
@@ -11,6 +12,7 @@ const Header = () => {
     setDarkmode(!darkmode);
     window.localStorage.setItem("isDarkmode", String(darkmode));
   };
+  const router = useRouter();
   return (
     <HeaderWrapper>
       <h1>Kakao Coffee</h1>
@@ -24,7 +26,7 @@ const Header = () => {
         <li onClick={toggleMode}>
           {darkmode === false ? <BsSun size={22} /> : <BsMoon size={22} />}
         </li>
-        <Button>로그인</Button>
+        <Button onClick={() => router.push("/login")}>로그인</Button>
       </HeaderLists>
     </HeaderWrapper>
   );

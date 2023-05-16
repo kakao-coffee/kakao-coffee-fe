@@ -2,12 +2,18 @@ import styled from "@emotion/styled";
 import React from "react";
 import Header from "./Header";
 import { PageMargin } from "@/styles/mixins";
+import { useRouter } from "next/router";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
+  const router = useRouter();
   return (
     <RootWrapper>
-      <Header />
-      <PageMargin />
+      {router.pathname !== "/login" && (
+        <>
+          <Header />
+          <PageMargin />
+        </>
+      )}
       {children}
     </RootWrapper>
   );
